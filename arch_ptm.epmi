@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<epm xmlns='http://eprints.org/ep2/data/2.0' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' id='http://eprints-devel.localdomain:8080/id/epm/arch_ptm' uuid='urn:uuid:e3ed57c2-0aac-5858-90f1-9b75bcd22d77'>
+  <epmid>arch_ptm</epmid>
+  <uri>http://eprints-devel.localdomain:8080/id/epm/arch_ptm</uri>
+  <documents>
+    <document>
+      <format>other</format>
+      <content>install</content>
+    </document>
+  </documents>
+  <version>1.0.0</version>
+  <creators>
+    <item>
+      <name>
+        <family>Brody</family>
+        <given>Tim</given>
+      </name>
+      <id>tdb2@ecs.soton.ac.uk</id>
+    </item>
+  </creators>
+  <title>Polynomial Texture Map Extension</title>
+</epm>
