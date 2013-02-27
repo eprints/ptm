@@ -29,6 +29,8 @@ sub new
 
 	$self->{ajax} = "interactive";
 
+	$self->{disable} = 0; # default to enable
+
 	return $self;
 }
 
@@ -146,6 +148,37 @@ sub _expand
 				}
 			}
 
+			if ($parts{'snapshots'}) {
+				foreach my $file (@{$parts{'snapshots'}})
+				{
+					if ($file->{filename} =~ m{/(snapshot\.jpg)$}) {
+						$file->{filename} = $1;
+						push @items, $eprint->create_subdataobj( "documents", {
+							main => $file->{filename},
+							format => "image",
+							formatdesc => "Snapshot",
+							mime_type => "image/jpeg",
+							files => [$file],
+						});
+						last;
+					}
+				}
+			}
+			elsif ($parts{'MuseumLighting'}) {
+				my $file = $parts{'MuseumLighting'}[0];
+				if ($file->{filename} =~ m{/([^/]+\.jpg)$}) {
+					$file->{filename} = $1;
+					push @items, $eprint->create_subdataobj( "documents", {
+						main => $file->{filename},
+						format => "image",
+						formatdesc => "Snapshot",
+						mime_type => "image/jpeg",
+						files => [$file],
+					});
+					last;
+				}
+			}
+
 			if ($parts{'finished-files'}) {
 				my $file = $parts{'finished-files'}[0];
 				$file->{filename} =~ s{^.*/}{};
@@ -158,7 +191,26 @@ sub _expand
 				});
 			}
 
-			if ($parts{'jpeg-exports'}) {
+			if ($parts{'original-captures'}) {
+				my $files = $parts{'original-captures'};
+				foreach my $file (@$files)
+				{
+					$file->{filename} =~ s{^.*/}{};
+				}
+				my $file = $files->[0];
+				my $epdata = {
+					main => $file->{filename},
+					formatdesc => "Source Images",
+					files => $files,
+				};
+				$self->{session}->run_trigger( EPrints::Const::EP_TRIGGER_MEDIA_INFO,
+						filepath => "$file->{_content}",
+						filename => $file->{filename},
+						epdata => $epdata,
+					);
+				push @items, $eprint->create_subdataobj( "documents", $epdata );
+			}
+			elsif ($parts{'jpeg-exports'}) {
 				my $files = $parts{'jpeg-exports'};
 				foreach my $file (@$files)
 				{
