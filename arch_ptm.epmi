@@ -4,8 +4,54 @@
   <uri>http://eprints-devel.localdomain:8080/id/epm/arch_ptm</uri>
   <documents>
     <document>
+      <files>
+        <file>
+          <filename>lang/en/phrases/ptmunpack.xml</filename>
+          <mime_type>inode/symlink</mime_type>
+          <hash>65b04cf455d3c902b90eb5b73873e54c</hash>
+          <hash_type>MD5</hash_type>
+          <filesize>609</filesize>
+        </file>
+        <file>
+          <filename>plugins/EPrints/Plugin/Screen/EPrint/Document/PtmUnpack.pm</filename>
+          <mime_type>inode/symlink</mime_type>
+          <hash>e0a0f61ce93ef9fe02cde3914e717940</hash>
+          <hash_type>MD5</hash_type>
+          <filesize>6910</filesize>
+        </file>
+        <file>
+          <filename>static/images/epm/ptmunpack_icon.png</filename>
+          <mime_type>inode/symlink</mime_type>
+          <hash>3c5629a8279f200b96cebdcdd11cf3c9</hash>
+          <hash_type>MD5</hash_type>
+          <filesize>241186</filesize>
+        </file>
+        <file>
+          <filename>static/style/images/action_ptmunpack.png</filename>
+          <mime_type>inode/symlink</mime_type>
+          <hash>a625f261343d3767ca5f00f5613a6262</hash>
+          <hash_type>MD5</hash_type>
+          <filesize>2080</filesize>
+        </file>
+      </files>
+      <mime_type>inode/symlink</mime_type>
       <format>other</format>
+      <main>static/style/images/action_ptmunpack.png</main>
       <content>install</content>
+    </document>
+    <document>
+      <files>
+        <file>
+          <filename>static/images/epm/ptmunpack_icon.png</filename>
+          <mime_type>inode/symlink</mime_type>
+          <hash>3c5629a8279f200b96cebdcdd11cf3c9</hash>
+          <hash_type>MD5</hash_type>
+          <filesize>241186</filesize>
+        </file>
+      </files>
+      <format>image</format>
+      <main>static/images/epm/ptmunpack_icon.png</main>
+      <content>coverimage</content>
     </document>
   </documents>
   <version>1.0.0</version>
@@ -19,4 +65,5 @@
     </item>
   </creators>
   <title>Polynomial Texture Map Extension</title>
+  <icon>images/epm/ptmunpack_icon.png</icon>
 </epm>
