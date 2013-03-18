@@ -175,7 +175,6 @@ sub _expand
 						mime_type => "image/jpeg",
 						files => [$file],
 					});
-					last;
 				}
 			}
 
